@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить сервис</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container" >
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <form method="post">
+                    <center>
+                    {{ form.hidden_tag() }}
+                    <div class="form-floating">
+                    {{ form.host(class="form-control") }}
+                    <label for="floatingInput">url вашего сервиса с указанием протокола {{ form.errors.get('host')[0] }}</label>
+                    </div>
+                    <div class="form-floating">
+                    {{ form.kuznechik_key(class="form-control") }}
+                    <label for="floatingInput">Ключ шифрования блочного шифра кузнечик {{ form.errors.get('kuznechik_key')[0] }}</label>
+                    </div>
+                    <div class="form-floating">
+                    {{ form.init_vec(class="form-control") }}
+                    <label for="floatingInput">Вектор инициализации блочного шифра кузнечик {{ form.errors.get('init_vec')[0] }}</label>
+                    </div>
+                    <div class="form-floating">
+                    {{ form.access_type(class="form-select") }}
+                    <label for="floatingInput">Какие данные о пользователе вы хотите получить?</label>
+                    </div>
+                    <div class="form-floating">
+                    {{ form.submit(class="btn btn-primary w-100 py-2") }}
+                    </div>
+                </form>
+            </div>
+            </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Ваши сервисы</title>
+    <style>
+        table {
+   border: 1px solid grey;
+}
+/* границы ячеек первого ряда таблицы */
+th {
+   border: 1px solid grey;
+}
+/* границы ячеек тела таблицы */
+td {
+   border: 1px solid grey;
+}
+    </style>
+</head>
+<body>
+<center>
+    <h1>Ваши сервисы</h1>
+    <a href="{{ url_for("services.add_service") }}">Создать сервис</a>
+    <a href="{{ url_for("auth.logout") }}">Выйти</a>
+<table>
+    <tr><td>id сервиса</td><td>ссылка на сервис</td></tr>
+    {% for i in services %}
+    <tr><td>{{ i.id }}</td> <td>{{ i.host_name }}</td></tr>
+{% endfor %}
+</table>
+</center>
+</body>
+</html>
